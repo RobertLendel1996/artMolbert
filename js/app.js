@@ -4607,6 +4607,20 @@
                 animOnScroll();
             }), 300);
         }
+        let downElements = gsap.utils.toArray(".my-element-down");
+        downElements.forEach((downElement => {
+            gsap.fromTo(downElement, {
+                scale: .6
+            }, {
+                scale: 1,
+                scrollTrigger: {
+                    trigger: downElement,
+                    start: "-1700",
+                    end: "-100",
+                    scrub: true
+                }
+            });
+        }));
     }
     window["FLS"] = true;
     isWebp();
